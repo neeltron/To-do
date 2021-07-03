@@ -16,7 +16,7 @@ def index():
     todo = request.method.get("item")
     priority = request.method.get("priority")
     db[priority] = todo
-  return render_template('index.html')
+  return render_template('index.html', obj = db)
 
 
 
