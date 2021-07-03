@@ -13,8 +13,8 @@ app = Flask(
 @app.route('/', methods = ['GET', 'POST'])
 def index():
   if request.method == "POST":
-    todo = request.method.get("item")
-    priority = request.method.get("priority")
+    todo = request.form.get("item")
+    priority = request.form.get("priority")
     db[priority] = todo
   return render_template('index.html', obj = db)
 
