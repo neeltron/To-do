@@ -11,13 +11,16 @@
       <input name = "priority" placeholder = "priority"></input><br>
       <input name = "item" placeholder = "list item"></input><br>
       <button>Add</button>
-      <button>Delete</button>
+      
       <br>
       <ul>
         {% for i in obj: %}
         <li>{{obj[i]}}</li>
         {% endfor %}
       </ul>
+    </form>
+    <form method = "post" action = "{{url_for("delete")}}">
+        <button>Delete</button>
     </form>
   </body>
 </html>

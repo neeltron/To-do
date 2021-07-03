@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, make_response, redirect, url_for
 from replit import db
+import time
 
 
 
@@ -22,10 +23,9 @@ def index():
 
 @app.route('/delete', methods = ['GET', 'POST'])
 def delete():
-  if request.method == "POST":
-    for i in range(0, 100):
-      del db[str(i)]
-    return redirect(url_for(index()))
+  db.clear()
+  time.sleep(2)
+  return redirect(url_for('index'))
 
 
 
