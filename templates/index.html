@@ -14,7 +14,7 @@
       <br>
       <ul>
         {% for i in obj: %}
-        <li>{{obj[i]}}<button name = "{{i}}">Done</button></li>
+        <li>{{obj[i]}} <form method = "post" action = "{{url_for("delete")}}"><input name = "{{i}}" value = "{{i}}"></input><button name = "{{i}}">Done</button></li>
         {% endfor %}
       </ul>
     </form>
