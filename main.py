@@ -24,10 +24,7 @@ def index():
 def delete():
   if request.method == "POST":
     for i in range(0, 100):
-      priority = request.form.get(str(i))
-      if priority == str(i):
-        print(db[priority])
-        del db[str(i)]
+      del db[str(i)]
     return redirect(url_for(index()))
 
 
