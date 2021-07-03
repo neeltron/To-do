@@ -5,6 +5,12 @@
     </title>
   </head>
   <body>
-    Hey there, feel free to use this starter kit for your Flask Project!
+    <h1>To-Do List</h1>
+    <br>
+    <form method = "post" action = "{{url_for("index")}}">
+      <input name = "priority" placeholder = "priority"></input><br>
+      <input name = "item" placeholder = "list item"></input><br>
+      <button>Add</button>
+    </form>
   </body>
 </html>
